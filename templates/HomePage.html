@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./home.css">
+    <title>website!</title>
+</head>
+
+<body>
+    <!-- 搜尋列(navbar) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 圖片大標(jumbotron) -->
+    <!-- <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Custom jumbotron</h1>
+            <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in
+                previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to
+                your liking.</p>
+            <button class="btn btn-primary btn-lg" type="button">Example button</button>
+        </div>
+    </div> -->
+
+    <!-- 幻燈片(carousel-caption) -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="http://fakeimg.pl/1920x400/?text=FirstSlide&font=lobster" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="http://fakeimg.pl/1920x400/?text=SecondSlide&font=lobster" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="http://fakeimg.pl/1920x400/?text=ThirdSlide&font=lobster" class="d-block w-100">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- 超連結(breadcrumb) -->
+    <div class="path">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- 內文(col-12手機 col-md-3平板電腦) -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                        The current link item
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+                    <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+                    <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+                    <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1"
+                        aria-disabled="true">A
+                        disabled link item</a>
+                </div>
+            </div>
+            <div class="col-12 col-md-9">
+                <h1>title</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dicta itaque similique alias doloribus
+                    aliquid corrupti mollitia, eius aspernatur voluptatibus omnis, sit perferendis ullam sapiente facere
+                    labore corporis eos! Voluptate?
+                    Quibusdam minima tenetur et ab dicta ad neque veritatis corrupti aperiam consequatur amet, expedita,
+                    dolorum reiciendis doloremque ratione, voluptatum excepturi voluptate fugiat sint hic iure? Quod
+                    quidem velit expedita explicabo.
+                    Consectetur aliquam beatae, magni ea quibusdam eveniet voluptate veniam inventore in vero unde
+                    possimus, quisquam, nemo quasi voluptatum totam incidunt amet necessitatibus a. Dignissimos, quam
+                    similique saepe alias soluta assumenda?
+                </p>
+
+                <div class="row">
+                    <div class="col-12 col-md-3">
+                        <div class="item">
+                            <img src="http://fakeimg.pl/300x200/?text=FirstFigure&font=lobster" class="img-fluid">
+                            <h3>title</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia totam dolores a!
+                                Necessitatibus reiciendis debitis esse velit at voluptates earum repudiandae officiis
+                                incidunt? Harum aliquid dolorum cumque debitis itaque totam.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <div class="item">
+                            <img src="http://fakeimg.pl/300x200/?text=SecondFigure&font=lobster" class="img-fluid">
+                            <h3>title</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia totam dolores a!
+                                Necessitatibus reiciendis debitis esse velit at voluptates earum repudiandae
+                                officiis incidunt? Harum aliquid dolorum cumque debitis itaque totam.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <div class="item">
+                            <img src="http://fakeimg.pl/300x200/?text=ThirdFigure&font=lobster" class="img-fluid">
+                            <h3>title</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia totam dolores
+                                a! Necessitatibus reiciendis debitis esse velit at voluptates earum repudiandae
+                                officiis incidunt? Harum aliquid dolorum cumque debitis itaque totam.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <div class="item">
+                            <img src="http://fakeimg.pl/300x200/?text=FourthFigure&font=lobster" class="img-fluid">
+                            <h3>title</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia totam
+                                dolores a! Necessitatibus reiciendis debitis esse velit at voluptates earum
+                                repudiandae officiis incidunt? Harum aliquid dolorum cumque debitis itaque
+                                totam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="map"></div>
+    <script src="demo.js"></script>
+    <!-- google api script -->
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB318Fh6o7ni_x1MlswE4vtD1hUReq0L_s&callback=initMap">
+    </script>
+    
+    <!-- bootstrap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous">
+    </script>
+    
+
+
+</body>
+
+</html>
