@@ -19,5 +19,7 @@ from . import views
 
 urlpatterns = [
     # path('admin', admin.site.urls),
-    path("",views.showtemplate)
+    path("",views.showtemplate),
+    path("map",views.show_google_map),
+    path("grid",views.grid_dataset)
 ]

@@ -19,7 +19,7 @@ function initMap() {
     //     })
 
     // map.data.loadGeoJson('twCounty2010.topo.json'); //載入台灣行政區資料(用google api載)
-    map.data.loadGeoJson('map.geojson'); //載入10格子資料(用google api載)
+    map.data.loadGeoJson('grid'); //載入10格子資料(用google api載)
 
     map.data.setStyle({ //設定框格屬性
         strokeWeight: 5,
@@ -53,7 +53,7 @@ function initMap() {
         infowindow.setPosition(coordinate);
         // // 設定資訊視窗的內容為行政區名稱
         infowindow.setContent(`<div style='float:left'>\
-                        <img src='fakeimg${feat.getProperty('name')}.jpg' width=100px heigh=100px>\
+                        <img src='static/assets/fakeimg${feat.getProperty('name')}.jpg' width=100px heigh=100px>\
                         </div><div style='float:right; padding: 10px;'>\
                         <b>Hazard</b><br/>probability:50%<br/>conclude:dangerous</div>`);
         // 將資訊視窗打開在地圖上
@@ -125,3 +125,4 @@ function initMap() {
     //     map: map
     // });
 }
+console.log("hi")
