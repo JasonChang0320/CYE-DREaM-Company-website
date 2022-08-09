@@ -6,3 +6,8 @@
 .row #Contact{
     border-left: solid #ACC0D8 5px; 
 }
+
+#hazard {
+    height: 600px;
+    margin-top: 20%;
+}
