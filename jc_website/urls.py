@@ -15,13 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include,re_path
-from post.views import PostListView, PostDetailView
+# from post.views import PostListView, PostDetailView
+from home.views import showMapPage,grid_dataset
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",include("home.urls")),
-    path("about/",include("about.urls")),
-    path("contact/",include("contact.urls")),
+    path("MapPage/",showMapPage),
+    path("MapPage/grid.geojson",grid_dataset),
+    path("AboutUs/",include("about.urls")),
+    path("Contact/",include("contact.urls")),
     path("post/",include("post.urls")),
     # path('post/', PostListView.as_view()),
     # path('post_<pk>', PostDetailView.as_view())

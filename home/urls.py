@@ -21,6 +21,6 @@ from home.views import HomePageContentView
 urlpatterns = [
     # path('admin', admin.site.urls),
     path('', HomePageContentView.as_view()),
-    path("map",views.show_google_map),
-    path("HomePage.geojson",views.grid_dataset)
+    # path("map",views.show_google_map),
+    # path("HomePage.geojson",views.grid_dataset)
 ]

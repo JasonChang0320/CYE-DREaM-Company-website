@@ -19,7 +19,7 @@ function initMap() {
     //     })
 
     // map.data.loadGeoJson('twCounty2010.topo.json'); //載入台灣行政區資料(用google api載)
-    map.data.loadGeoJson('HomePage.geojson'); //載入10格子資料(用google api載)
+    map.data.loadGeoJson('grid.geojson'); //載入10格子資料(用google api載)
 
     map.data.setStyle({ //設定框格屬性
         strokeWeight: 5,
@@ -45,7 +45,7 @@ function initMap() {
         var feat = e.feature;
         var num = feat.getProperty('name');
         var img = document.getElementById('hazard');
-        img.src = `fakeimg${num}.jpg`;
+        img.src = `../static/assets/fakeimg${num}.jpg`;
         console.log(img.src)
         // 點擊時獲取滑鼠的經緯度座標
         // var coordinate = {
