@@ -53,7 +53,7 @@ function initMap() {
         infowindow.setPosition(coordinate);
         // // 設定資訊視窗的內容為行政區名稱
         infowindow.setContent(`<div style='float:left'>\
-                        <img src='fakeimg${feat.getProperty('name')}.jpg' width=100px heigh=100px></div>\
+                        <img src='static/assets/home_image/google_map_img/fakeimg${feat.getProperty('name')}.jpg' width=100px heigh=100px></div>\
                         <div style='float:right; padding: 10px;'><b>ID:${feat.getProperty('name')}</b><br/>\
                         <b>Hazard</b><br/>probability:50%<br/>conclude:dangerous</div>`);
         // 將資訊視窗打開在地圖上
