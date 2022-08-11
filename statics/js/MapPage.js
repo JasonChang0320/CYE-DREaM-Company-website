@@ -4,7 +4,9 @@ function initMap() {
         center: new google.maps.LatLng(23.5, 121),
         mapTypeId: "terrain", //地形
     });
-
+    var controlDiv = document.getElementById('floating-panel');
+    map.controls[google.maps.ControlPosition.LEFT].push(controlDiv);
+    controlDiv.style.marginLeft="10px";
     // fetch("./map.geojson") //讀入經緯json資料並在圖上作圖
     //     .then((res) => {
     //         return res.json();
@@ -67,4 +69,3 @@ function initMap() {
         infowindow.close(map);
     });
 }
-
