@@ -1,7 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
+{% for content in aboutus_content %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +19,7 @@
             <a class="navbar-brand" href="..">
                 <img src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24"
                     class="d-inline-block align-text-top">
-                Corporation Name</a>
+                {{content.name}}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -50,15 +50,12 @@
     <!-- 圖片大標(jumbotron) -->
     <div class="p-5 mb-4 bg-light rounded-3">
         <div class="container">
-            <h1 class="display-8 fw-bold">關於我們</h1>
+            <h1 class="display-8 fw-bold">{{content.title}}</h1>
             <hr>
             <br>
             <br>
             <p class="col-12 col-md-8" style="width:100%">
-                本中心為地震災害鏈風險評估及管理研究中心，英文簡稱E-DREaM。<br>
-
-                團隊主要成員，包括國內重要的地震、海嘯、山崩土石流、堰塞湖、土壤液化、極端天氣系統以及風險評估專任教授約10人，碩、博士級研究人員5名。短期發展策略將先以地震以及地震造成之衍生災害或災害鏈風險評估為主，中、長程規劃研究課題擬再進一步包括環境誘發地震及餘震危害及風險分析、極端氣候對山崩、土石流災害風險之影響、氣象及海洋災害等議題。
-                本中心以地球系統災害科學為思維，對地震及震後衍生災害鏈相關之成果，以四維數位時空災害風險評估，並與產業鏈結研發災害風險評估及管理對策。整合與產業的密切連結，持續與防災產業界互動，瞭解產業需求，並進而精進地震科學的研發及其應用。目前已與產業界開始進行地震危害及風險評估合作案，後續將陸續拓展產業界影響力。
+                {{content.content}}<br>
             </p>
         </div>
     </div>
@@ -67,29 +64,29 @@
     <!-- 內文(col-12手機 col-md-3平板電腦) -->
     <div class="p-5 mb-4 bg-light rounded-3">
         <div class="container">
-            <h1 class="display-6 fw-bold">公司成員</h1>
+            <h1 class="display-6 fw-bold">{{content.member_title}}</h1>
             <hr>            
             <br>
             <br>
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <img src="http://fakeimg.pl/350x450/?text=FirstFigure&font=lobster" alt="pic">
-                </div>
-                <div class="col-12 col-md-3">
-                    馬國鳳<br>
-                    中心主任/研究員/教授<br>
+            {% for member in member_content %}
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <img src="../static/assets/{{ member.pic_url }}" alt="pic">
+                    </div>
+                    <div class="col-12 col-md-3">
+                        {{member.name}}<br>
+                        {{member.experience1}}<br>
 
-                    中央研究院地球科學研究所 特聘研究員<br>
-                    國立中央大學地球科學系 合聘教授<br>
-                    美國加州理工學院地質與行星科學系 博士<br>
-                    03-4227151 #34760<br>
+                        {{member.experience2}}<br>
+                        {{member.experience3}}<br>
+                        {{member.experience4}}<br>
+                        {{member.phone}}<br>
+                    </div>
+                    <div class="col-12 col-md-5">
+                        {{member.introduce}}
+                    </div>
                 </div>
-                <div class="col-12 col-md-5">
-                    宜蘭人，畢業於美國加州理工學院，台灣知名地震學家，現任台灣地震科學中心首席科學家，中央研究院地球科學研究所特聘研究員，國立中央大學地球科學系教授，地震災害鏈風險評估及管理研究中心主任。曾榮獲中華民國十大傑出女青年（2000年）、台灣傑出女科學家獎（2011年）、第17屆國家講座（2013年）、2019年榮獲美國地球物理學會會士（2019年）、2021年榮獲AOGS Axford Medal。
-
-                    現為全球地震模型組織會員，主要專業領域為地震學、地震運動學及動力學、三維波傳模擬、地震危害度分析及地震防災，知名貢獻為首度觀測到大型地震斷層的滑移帶厚度、量化計算生成地震的能量，發表均向地震研究等。目前致力於地震災害風險評估研究，目標科學研究實用化，將學術成果應用至相關產業界，降低地震災害損失。
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 
@@ -116,5 +113,5 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 </body>
-
+{% endfor %}
 </html>

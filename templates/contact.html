@@ -1,7 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
+{% for Content in contact_content %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +19,7 @@
             <a class="navbar-brand" href="..">
                 <img src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24"
                     class="d-inline-block align-text-top">
-                Corporation Name</a>
+                    {{Content.name}}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -54,18 +54,18 @@
             <br>
             <div class="row">
                 <div class="col-12 col-md-6">
-                    <h1 class="display-8 fw-bold">聯絡我們</h1>
+                    <h1 class="display-8 fw-bold">{{Content.title}}</h1>
                     <br>
                     <br>
                     <span class="navbar-text">
-                        電話：03-4262419 / 03-4227151 #34747<br>
-                        Email: info@e-dream.tw
+                        電話：{{Content.phone}}<br>
+                        Email: {{Content.email}}
                         <br>
                         <br>
                         <br>
-                        32001桃園市中壢區中大路300號中央大學 國鼎圖書資料館 409R
+                        地址: {{Content.address}}
                         <br>
-                        MON-FRI 09:00 - 17:00
+                        服務時間: {{Content.office_hour}}
                     </span>
                 </div>
                 <div class="col-12 col-md-6">
@@ -109,5 +109,5 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 </body>
-
+{% endfor %}
 </html>
