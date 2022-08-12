@@ -13,8 +13,9 @@
 }
 
 #floating-panel {
+    display:none;
     padding: 10px;
     background-color: #ffffff;
-    text-align: center;
+    text-align: left;
     font-family: "Times New Roman";
 }
