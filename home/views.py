@@ -9,17 +9,10 @@ from django.views.generic import ListView
 # def showtemplate(request):
 #     return render(request, 'HomePage.html')
 
-def showMapPage(request):
-    return render(request, 'MapPage.html')
 
 # def show_google_map(request):
 #     return render(request,"map.html")
 
-def grid_dataset(request):
-    with open("statics/map.geojson") as f:
-        data=json.load(f)
-
-    return JsonResponse(data)
 
 class HomePageContentView(ListView):
     model = HomePage

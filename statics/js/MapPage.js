@@ -45,7 +45,7 @@ function initMap() {
         var feat = e.feature;
         var num = feat.getProperty('name');
         var img = document.getElementById('hazard');
-        img.src = `../static/assets/fakeimg${num}.jpg`;
+        img.src = `../static/assets/map_image/fakeimg${num}.jpg`;
         console.log(img.src)
         // 點擊時獲取滑鼠的經緯度座標
         // var coordinate = {

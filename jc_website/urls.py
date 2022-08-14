@@ -16,13 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include,re_path
 # from post.views import PostListView, PostDetailView
-from home.views import showMapPage,grid_dataset
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",include("home.urls")),
-    path("MapPage/",showMapPage),
-    path("MapPage/grid.geojson",grid_dataset),
+    path("MapPage/",include("map.urls")),
     path("AboutUs/",include("about.urls")),
     path("Contact/",include("contact.urls")),
     path("post/",include("post.urls")),

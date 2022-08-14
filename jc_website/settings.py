@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "about",
     "contact",
     "post",
+    "map",
 ]
 
 MIDDLEWARE = [

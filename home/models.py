@@ -36,15 +36,15 @@ class HomePage(models.Model):
     def __str__(self):
         return self.name
 
-class GoogleMap_Img(models.Model):
-    image_ID = models.TextField("圖片群ID",primary_key=True, editable=False)
-    pic_url1 = models.ImageField("子標題圖片1 URL",storage=OverwriteStorage(),upload_to='home_image/google_map_img',blank=True)
-    pic_url2 = models.ImageField("子標題圖片2 URL",storage=OverwriteStorage(),upload_to='home_image/google_map_img',blank=True)
-    pic_url3 = models.ImageField("子標題圖片3 URL",storage=OverwriteStorage(),upload_to='home_image/google_map_img',blank=True)
-    pic_url4 = models.ImageField("子標題圖片4 URL",storage=OverwriteStorage(),upload_to='home_image/google_map_img',blank=True)
-    pic_url5 = models.ImageField("子標題圖片5 URL",storage=OverwriteStorage(),upload_to='home_image/google_map_img',blank=True)
-    pic_url6 = models.ImageField("子標題圖片6 URL",storage=OverwriteStorage(),upload_to='home_image/google_map_img',blank=True)
-    pic_url7 = models.ImageField("子標題圖片7 URL",storage=OverwriteStorage(),upload_to='home_image/google_map_img',blank=True)
-    pic_url8 = models.ImageField("子標題圖片8 URL",storage=OverwriteStorage(),upload_to='home_image/google_map_img',blank=True)
-    pic_url9 = models.ImageField("子標題圖片9 URL",storage=OverwriteStorage(),upload_to='home_image/google_map_img',blank=True)
-    pic_url0 = models.ImageField("子標題圖片10 URL",storage=OverwriteStorage(),upload_to='home_image/google_map_img',blank=True)
+# class GoogleMap_Img(models.Model):
+#     image_ID = models.TextField("圖片群ID",primary_key=True, editable=False)
+#     pic_url1 = models.ImageField("子標題圖片1 URL",storage=OverwriteStorage(),upload_to='home_image/google_map_img',blank=True)
+#     pic_url2 = models.ImageField("子標題圖片2 URL",storage=OverwriteStorage(),upload_to='home_image/google_map_img',blank=True)
+#     pic_url3 = models.ImageField("子標題圖片3 URL",storage=OverwriteStorage(),upload_to='home_image/google_map_img',blank=True)
+#     pic_url4 = models.ImageField("子標題圖片4 URL",storage=OverwriteStorage(),upload_to='home_image/google_map_img',blank=True)
+#     pic_url5 = models.ImageField("子標題圖片5 URL",storage=OverwriteStorage(),upload_to='home_image/google_map_img',blank=True)
+#     pic_url6 = models.ImageField("子標題圖片6 URL",storage=OverwriteStorage(),upload_to='home_image/google_map_img',blank=True)
+#     pic_url7 = models.ImageField("子標題圖片7 URL",storage=OverwriteStorage(),upload_to='home_image/google_map_img',blank=True)
+#     pic_url8 = models.ImageField("子標題圖片8 URL",storage=OverwriteStorage(),upload_to='home_image/google_map_img',blank=True)
+#     pic_url9 = models.ImageField("子標題圖片9 URL",storage=OverwriteStorage(),upload_to='home_image/google_map_img',blank=True)
+#     pic_url0 = models.ImageField("子標題圖片10 URL",storage=OverwriteStorage(),upload_to='home_image/google_map_img',blank=True)
