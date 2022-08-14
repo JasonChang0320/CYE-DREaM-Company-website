@@ -3,11 +3,19 @@
     margin-top: 10%;
 }
 
-.row #Contact{
-    border-left: solid #ACC0D8 5px; 
+.row #Contact {
+    border-left: solid #ACC0D8 5px;
 }
 
 #hazard {
     height: 600px;
     margin-top: 20%;
+}
+
+#floating-panel {
+    display:none;
+    padding: 10px;
+    background-color: #ffffff;
+    text-align: left;
+    font-family: "Times New Roman";
 }

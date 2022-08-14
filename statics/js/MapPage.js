@@ -5,6 +5,13 @@ function initMap() {
         mapTypeId: "terrain", //地形
     });
 
+    var controlDiv = document.getElementById('floating-panel'); //顯示圖層位置
+    map.controls[google.maps.ControlPosition.LEFT].push(controlDiv);
+    controlDiv.style.marginLeft = "10px";
+    setTimeout(function(){
+        controlDiv.style.display= "block";
+    },500);
+    
     // fetch("./map.geojson") //讀入經緯json資料並在圖上作圖
     //     .then((res) => {
     //         return res.json();
@@ -19,26 +26,33 @@ function initMap() {
     //     })
 
     // map.data.loadGeoJson('twCounty2010.topo.json'); //載入台灣行政區資料(用google api載)
-    map.data.loadGeoJson('grid.geojson'); //載入10格子資料(用google api載)
 
-    map.data.setStyle({ //設定框格屬性
-        strokeWeight: 5,
-        strokeOpacity: .3,
-        strokeColor: '#000',
-        fillColor: '#f00',
-        fillOpacity: .3
-    });
+    var HazardCheckbox = document.getElementById("toggle-hazard");
+    var counter = 0;
+    HazardCheckbox.addEventListener('change', function () {
+        if (this.checked) {
+            counter++;
+            if (counter == 1) { //確保只載入一次
+                map.data.loadGeoJson('grid.geojson'); //載入10格子資料(用google api載)
+            }
+            map.data.setStyle({ //設定框格屬性
+                strokeWeight: 5,
+                strokeOpacity: .3,
+                strokeColor: '#000',
+                fillColor: '#f00',
+                fillOpacity: .3
+            });
 
-    map.data.addListener('mouseover', function (event) { //設定滑鼠移入效果
-        map.data.revertStyle();
-        map.data.overrideStyle(event.feature, {
-            fillColor: '#000'
-        });
-    });
+            map.data.addListener('mouseover', function (event) { //設定滑鼠移入效果
+                map.data.revertStyle();
+                map.data.overrideStyle(event.feature, {
+                    fillColor: '#000'
+                });
+            });
 
-    map.data.addListener('mouseout', function (event) { //設定滑鼠移出效果
-        map.data.revertStyle();
-    });
+            map.data.addListener('mouseout', function (event) { //設定滑鼠移出效果
+                map.data.revertStyle();
+            });
 
     var infowindow = new google.maps.InfoWindow(); //建立彈窗
     map.data.addListener('click', function (e) {
@@ -63,8 +77,13 @@ function initMap() {
         // infowindow.open(map);
     });
 
-    map.data.addListener('mouseout', function (e) {
-        infowindow.close(map);
+            map.data.addListener('mouseout', function (e) {
+                infowindow.close(map);
+            });
+            map.data.setMap(map);
+        } else {
+            map.data.setMap(null);
+        }
     });
-}
 
+}
