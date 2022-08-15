@@ -10,7 +10,7 @@ function initMap() {
     controlDiv.style.marginLeft = "10px";
     setTimeout(function(){
         controlDiv.style.display= "block";
-    },500);
+    },700);
     
     // fetch("./map.geojson") //讀入經緯json資料並在圖上作圖
     //     .then((res) => {
