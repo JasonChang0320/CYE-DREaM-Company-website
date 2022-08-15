@@ -16,9 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
-from service.views import showtemplate
+# from service.views import showtemplate
 
 urlpatterns = [
     # path('admin', admin.site.urls),
-    path('', showtemplate),
+    path('', views.showService),
 ]

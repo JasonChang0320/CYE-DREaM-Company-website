@@ -17,10 +17,10 @@
     <!-- 搜尋列(navbar) -->
     <nav class="navbar navbar-expand-lg navbar-light" style='background-color: #e3f2fd;'>
         <div class="container-xxl">
-            <a class="navbar-brand" href="">
+            <a class="navbar-brand" href="..">
                 <img src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24"
                     class="d-inline-block align-text-top">
-                Company name</a>
+                公司名稱</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="">Home</a>
+                        <a class="nav-link active" aria-current="page" href="..">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../MapPage">Map</a>
@@ -57,119 +57,41 @@
         <hr>
         <br>
         <br>
-        <div class="column mt-lg-1">
-            <div class="row col-12 col-md-12">
-                <div class="col-12 col-md-2">
-                    <img src="../static/assets/{{ Content.pic_url1 }}" class="img-fluid">
-                </div>
-                <div class="col-12 col-md-2">
-                    <h3>Title1</h3>
-                </div>
-                <div class="col-12 col-md-8">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, labore assumenda esse
-                        deleniti voluptate dolore ipsa numquam quo, praesentium nam fugiat temporibus, iure non
-                        dolorum omnis impedit ipsam sapiente quae!</p>
-                </div>
-            </div>
-            <div class="row col-12 col-md-12 mt-5">
-                <div class="col-12 col-md-2">
-                    <img src="../static/assets/{{ Content.pic_url1 }}" class="img-fluid">
-                </div>
-                <div class="col-12 col-md-2">
-                    <h3>Title1</h3>
-                </div>
-                <div class="col-12 col-md-8">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem minima non dolorem dolores quod
-                        doloribus, eius, fugit, ipsum iure temporibus velit nisi facilis numquam neque similique?
-                        Blanditiis ad consequuntur enim!</p>
+        {% for service in service_content %}
+            <div class="column mt-lg-1">
+                <div class="row col-12 col-md-12">
+                    <div class="col-12 col-md-2">
+                        <img src="../static/assets/{{ service.pic_url }}" class="img-fluid">
+                    </div>
+                    <div class="col-12 col-md-2">
+                        <h3>{{service.title}}</h3>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p>{{service.content}}</p>
+                    </div>
                 </div>
             </div>
-            <div class="row col-12 col-md-12 mt-5">
-                <div class="col-12 col-md-2">
-                    <img src="../static/assets/{{ Content.pic_url1 }}" class="img-fluid">
-                </div>
-                <div class="col-12 col-md-2">
-                    <h3>Title1</h3>
-                </div>
-                <div class="col-12 col-md-8">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit ipsum error enim minus
-                        adipisci molestiae maiores alias quam velit earum, ratione sequi. Aliquid ipsam, ipsum
-                        molestias nam eius tenetur sed?</p>
-                </div>
-            </div>
-            <div class="row col-12 col-md-12 mt-5">
-                <div class="col-12 col-md-2">
-                    <img src="../static/assets/{{ Content.pic_url1 }}" class="img-fluid">
-                </div>
-                <div class="col-12 col-md-2">
-                    <h3>Title1</h3>
-                </div>
-                <div class="col-12 col-md-8">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum omnis molestiae accusantium
-                        explicabo quas quaerat quam unde, voluptatem mollitia dicta repellendus, deleniti fuga
-                        laborum! Officiis omnis dolore ad debitis! Harum.</p>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
 
         <h1 class="display-6 fw-bold mt-5">事蹟</h1>
         <hr>
         <br>
         <br>
-        <div class="column mt-lg-1">
-            <div class="row col-12 col-md-12">
-                <div class="col-12 col-md-2">
-                    <img src="../static/assets/{{ Content.pic_url1 }}" class="img-fluid">
-                </div>
-                <div class="col-12 col-md-2">
-                    <h3>Title1</h3>
-                </div>
-                <div class="col-12 col-md-8">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, labore assumenda esse
-                        deleniti voluptate dolore ipsa numquam quo, praesentium nam fugiat temporibus, iure non
-                        dolorum omnis impedit ipsam sapiente quae!</p>
-                </div>
-            </div>
-            <div class="row col-12 col-md-12 mt-5">
-                <div class="col-12 col-md-2">
-                    <img src="../static/assets/{{ Content.pic_url1 }}" class="img-fluid">
-                </div>
-                <div class="col-12 col-md-2">
-                    <h3>Title1</h3>
-                </div>
-                <div class="col-12 col-md-8">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem minima non dolorem dolores quod
-                        doloribus, eius, fugit, ipsum iure temporibus velit nisi facilis numquam neque similique?
-                        Blanditiis ad consequuntur enim!</p>
+        {% for experience in experience_content %}
+            <div class="column mt-lg-1">
+                <div class="row col-12 col-md-12">
+                    <div class="col-12 col-md-2">
+                        <img src="../static/assets/{{ experience.pic_url }}" class="img-fluid">
+                    </div>
+                    <div class="col-12 col-md-2">
+                        <h3>{{experience.title}}</h3>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p>{{experience.content}}</p>
+                    </div>
                 </div>
             </div>
-            <div class="row col-12 col-md-12 mt-5">
-                <div class="col-12 col-md-2">
-                    <img src="../static/assets/{{ Content.pic_url1 }}" class="img-fluid">
-                </div>
-                <div class="col-12 col-md-2">
-                    <h3>Title1</h3>
-                </div>
-                <div class="col-12 col-md-8">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit ipsum error enim minus
-                        adipisci molestiae maiores alias quam velit earum, ratione sequi. Aliquid ipsam, ipsum
-                        molestias nam eius tenetur sed?</p>
-                </div>
-            </div>
-            <div class="row col-12 col-md-12 mt-5">
-                <div class="col-12 col-md-2">
-                    <img src="../static/assets/{{ Content.pic_url1 }}" class="img-fluid">
-                </div>
-                <div class="col-12 col-md-2">
-                    <h3>Title1</h3>
-                </div>
-                <div class="col-12 col-md-8">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum omnis molestiae accusantium
-                        explicabo quas quaerat quam unde, voluptatem mollitia dicta repellendus, deleniti fuga
-                        laborum! Officiis omnis dolore ad debitis! Harum.</p>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 
     <!-- 底板樣式 -->

@@ -6,3 +6,4 @@ from .models import Map_Image
 @admin.register(Map_Image)
 class Question_Admin(admin.ModelAdmin):
     list_display = ( "pic_url",)
+    ordering = ("id",)
