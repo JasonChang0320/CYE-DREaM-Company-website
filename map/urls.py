@@ -16,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
-from map.views import showMapPage,grid_dataset
+from map.views import showMapPage,grid_dataset,fault_dataset
 
 urlpatterns = [
     # path('admin', admin.site.urls),
     path('', showMapPage),
     path("grid.geojson",grid_dataset),
+    path("fault.geojson",fault_dataset)
     # path("map",views.show_google_map),
     # path("HomePage.geojson",views.grid_dataset)
 ]
