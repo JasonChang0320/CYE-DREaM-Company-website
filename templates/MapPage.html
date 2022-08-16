@@ -1,7 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
+{% for Content in MapPage_content %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,9 +17,9 @@
     <nav class="navbar navbar-expand-lg navbar-light" style='background-color: #e3f2fd;'>
         <div class="container-xxl">
             <a class="navbar-brand" href="..">
-                <img src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24"
+                <img src="../static/assets/{{ Content.logo }}" alt="" width="30" height="24"
                     class="d-inline-block align-text-top">
-                公司名稱</a>
+                {{ Content.name }}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -91,14 +91,11 @@
     <footer class="bd-footer py-4 py-md-5 mt-5 bg-dark">
         <div class="container py-4 py-md-5 px-4 px-md-3">
             <div class="row align-items-center">
-                <div class="text-center col-4 col-md-4" style="color:white">Contact Us</div>
+                <div class="text-center col-4 col-md-4" style="color:white">{{ Content.bottom_title }}</div>
                 <div class="text-left col-8 col-md-8" id="Contact" style="color:white">
-                    We offer several earthquake hazard
-                    assessments options for your group. Fine tune your concerns in a matter of a minimum time by
-                    exploring all the scenarios around the world.
-                    Contact us in <br>
-                    mail:info@e-dream.tw<br>
-                    call: +886 03-4262419
+                    {{ Content.bottom_content }}<br>
+                    mail: {{ Content.bottom_email }}<br>
+                    call: {{ Content.bottom_phone }}
                 </div>
             </div>
         </div>
@@ -116,5 +113,5 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 </body>
-
+{% endfor %}
 </html>

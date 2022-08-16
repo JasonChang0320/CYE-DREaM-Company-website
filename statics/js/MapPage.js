@@ -27,6 +27,14 @@ function initMap() {
 
     // map.data.loadGeoJson('twCounty2010.topo.json'); //載入台灣行政區資料(用google api載)
 
+    map.addListener('mouseover', function (e) {
+        var coordinate = {
+            lat: e.latLng.lat(),
+            lng: e.latLng.lng()
+        };
+        console.log(coordinate.lat)
+    });
+
     var HazardCheckbox = document.getElementById("toggle-hazard");
     var FaultCheckbox = document.getElementById("toggle-fault");
     var counter = 0;
@@ -102,5 +110,5 @@ function initMap() {
             FalutLayer.setMap(null);
         }
     });
-
+    // layer problem: https://cloud.tencent.com/developer/ask/sof/487546
 }
