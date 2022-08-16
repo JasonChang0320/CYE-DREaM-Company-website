@@ -11,3 +11,9 @@ def grid_dataset(request):
         data=json.load(f)
 
     return JsonResponse(data)
+
+def fault_dataset(request):
+    with open("statics/TEM45version1_polyline2D.geojson") as f:
+        data=json.load(f)
+
+    return JsonResponse(data)
