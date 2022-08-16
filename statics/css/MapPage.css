@@ -13,9 +13,28 @@
 }
 
 #floating-panel {
-    display:none;
+    display: none;
     padding: 10px;
     background-color: #ffffff;
     text-align: left;
     font-family: "Times New Roman";
+}
+
+#toggle-text {
+    font-Size: 18px;
+    font-family: "Times New Roman";
+    width: 50px;
+}
+
+.label {
+    font-Size: 15px;
+    font-family: "Times New Roman";
+}
+
+.btn {
+    height: 25px;
+    width: 50px;
+    font-Size: 15px;
+    font-family: "Times New Roman";
+    padding: 0;
 }

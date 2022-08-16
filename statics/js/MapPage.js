@@ -1,5 +1,5 @@
 function initMap() {
-    map = new google.maps.Map(document.getElementById("map"), {
+    var map = new google.maps.Map(document.getElementById("map"), {
         zoom: 7,
         center: new google.maps.LatLng(23.5, 121),
         mapTypeId: "terrain", //地形
@@ -27,13 +27,13 @@ function initMap() {
 
     // map.data.loadGeoJson('twCounty2010.topo.json'); //載入台灣行政區資料(用google api載)
 
-    map.addListener('mouseover', function (e) {
-        var coordinate = {
-            lat: e.latLng.lat(),
-            lng: e.latLng.lng()
-        };
-        console.log(coordinate.lat)
-    });
+    // map.addListener('mouseover', function (e) {
+    //     var coordinate = {
+    //         lat: e.latLng.lat(),
+    //         lng: e.latLng.lng()
+    //     };
+    //     console.log(coordinate.lat)
+    // });
 
     var HazardCheckbox = document.getElementById("toggle-hazard");
     var FaultCheckbox = document.getElementById("toggle-fault");
@@ -111,4 +111,38 @@ function initMap() {
         }
     });
     // layer problem: https://cloud.tencent.com/developer/ask/sof/487546
+
+    var SearchBtn = document.getElementById("search");
+    var ClearBtn = document.getElementById("clear");
+    var markers = [];
+    SearchBtn.addEventListener('click', function () {
+        var LonValue = parseFloat(document.getElementById("toggle-Lon").value);
+        var LatValue = parseFloat(document.getElementById("toggle-Lat").value);
+        if (isNaN(LonValue) || isNaN(LatValue)) {
+            alert('Input value plz');
+        } else if (LonValue > 180 || LonValue < -180) {
+            alert('Input Longitude Value between -180-180');
+        } else if (LatValue > 90 || LatValue < -90) {
+            alert('Input Latitude Value between -90-90');
+        } else {
+            var position = {
+                lat: LatValue,
+                lng: LonValue
+            };
+
+            marker = new google.maps.Marker({ //注意這裡的marker不要使用var來呼叫，會變成local variable，正確應該是要global variable下面的EventListener才吃的到
+                position: position,
+                map: map,
+                animation: google.maps.Animation.DROP
+            });
+            markers.push(marker);
+        }
+    });
+
+    ClearBtn.addEventListener('click', function () {
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(null);
+        }
+        markers = [];
+    });
 }
