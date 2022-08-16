@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/HomePage.css' %}">
+    <title>map</title>
+</head>
+{% for Service in service_title %}
+<body>
+    <!-- 搜尋列(navbar) -->
+    <nav class="navbar navbar-expand-lg navbar-light" style='background-color: #e3f2fd;'>
+        <div class="container-xxl">
+            <a class="navbar-brand" href="..">
+                <img src="../static/assets/{{ Service.logo }}" alt="" width="30" height="24"
+                    class="d-inline-block align-text-top">
+                {{ Service.name }}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="..">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../MapPage">Map</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../AboutUs">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Contact">Contact</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    中文/English
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 內文(col-12手機 col-md-3平板電腦) -->
+    <div class="container">
+        <h1 class="display-6 fw-bold mt-5">{{Service.title1}}</h1>
+        <hr>
+        <br>
+        <br>
+        {% for service in service_content %}
+            <div class="column mt-lg-1">
+                <div class="row col-12 col-md-12 mt-1">
+                    <div class="col-12 col-md-4 mt-1">
+                        <img src="../static/assets/{{ service.pic_url }}" class="img-fluid">
+                    </div>
+                    <div class="col-12 col-md-8 mt-4">
+                        <h3>{{service.title}}</h3>
+                        <p>{{service.content}}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+        <h1 class="display-6 fw-bold mt-5">{{Service.title2}}</h1>
+        <hr>
+        <br>
+        <br>
+        {% for experience in experience_content %}
+            <div class="column mt-lg-1">
+                <div class="row col-12 col-md-12 mt-1">
+                    <div class="col-12 col-md-4 mt-4">
+                        <img src="../static/assets/{{ experience.pic_url }}" class="img-fluid">
+                    </div>
+                    <div class="col-12 col-md-8 mt-4">
+                        <h3>{{experience.title}}</h3>
+                        <p>{{experience.content}}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- 底板樣式 -->
+    <footer class="bd-footer py-4 py-md-5 mt-5 bg-dark">
+        <div class="container py-4 py-md-5 px-4 px-md-3">
+            <div class="row align-items-center">
+                <div class="text-center col-4 col-md-4" style="color:white">{{Service.bottom_title}}</div>
+                <div class="text-left col-8 col-md-8" id="Contact" style="color:white">
+                    {{Service.bottom_content}}<br>
+                    mail: {{Service.bottom_email}}<br>
+                    call: {{Service.bottom_phone}}
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- google api script -->
+    <script src="{% static 'js/HomePage.js' %}"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB318Fh6o7ni_x1MlswE4vtD1hUReq0L_s&callback=initMap&v=weekly"
+        defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- bootstrap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+</body>
+{% endfor %}
+
+</html>

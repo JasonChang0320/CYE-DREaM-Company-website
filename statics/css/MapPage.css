@@ -1,0 +1,40 @@
+#map {
+    height: 600px;
+    margin-top: 10%;
+}
+
+.row #Contact {
+    border-left: solid #ACC0D8 5px;
+}
+
+#hazard {
+    height: 600px;
+    margin-top: 20%;
+}
+
+#floating-panel {
+    display: none;
+    padding: 10px;
+    background-color: #ffffff;
+    text-align: left;
+    font-family: "Times New Roman";
+}
+
+#toggle-text {
+    font-Size: 18px;
+    font-family: "Times New Roman";
+    width: 50px;
+}
+
+.label {
+    font-Size: 15px;
+    font-family: "Times New Roman";
+}
+
+.btn {
+    height: 25px;
+    width: 50px;
+    font-Size: 15px;
+    font-family: "Times New Roman";
+    padding: 0;
+}

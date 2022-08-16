@@ -1,0 +1,10 @@
+#map {
+    height: 1000px;
+    width: 100%;
+
+    position: relative;
+}
+
+.row #Contact{
+    border-left: solid #ACC0D8 5px; 
+}

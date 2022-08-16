@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% for Content in MapPage_content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/MapPage.css' %}">
+    <title>map</title>
+</head>
+
+<body>
+    <!-- 搜尋列(navbar) -->
+    <nav class="navbar navbar-expand-lg navbar-light" style='background-color: #e3f2fd;'>
+        <div class="container-xxl">
+            <a class="navbar-brand" href="..">
+                <img src="../static/assets/{{ Content.logo }}" alt="" width="30" height="24"
+                    class="d-inline-block align-text-top">
+                {{ Content.name }}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="..">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Map</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Service">Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../AboutUs">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Contact">Contact</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    中文/English
+                </span>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- 內文(col-12手機 col-md-3平板電腦) -->
+    <div class="container">
+        <div class="row">
+            <!-- <div class="col-12 col-md-3">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                        The current link item
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+                    <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+                    <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+                    <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1"
+                        aria-disabled="true">A
+                        disabled link item</a>
+                </div>
+            </div> -->
+            <div class="col-12 col-md-8">
+                <div id="floating-panel">
+                    <input class="form-check-input" type="checkbox" id="toggle-fault">
+                    <label class="form-check-label" for="toggle-fault" style="font-size: 15px;">&nbsp Fault
+                        Layer</label>
+                    <br>
+                    <br>
+                    <input class="form-check-input" type="checkbox" id="toggle-hazard">
+                    <label class="form-check-label" for="toggle-hazard" style="font-size: 15px;">&nbsp Hazard
+                        Layer</label>
+                    <br>
+                    <br>
+                    <label class="label" for="toggle-text">Lon&nbsp:&nbsp</label>
+                    <input class="form-text-input" type="text" id="toggle-Lon" name="name" placeholder="Input Longitude"
+                        size="10">
+                    <br>
+                    <br>
+                    <label class="label" for="toggle-text">Lat&nbsp&nbsp:&nbsp</label>
+                    <input class="form-text-input" type="text" id="toggle-Lat" name="name" placeholder="Input Latitude"
+                        size="10">
+                    <br>
+                    <br>
+                    <div class="row justify-content-around">
+                        <button class="btn btn-secondary" id="search">Search</button>
+                        <button class="btn btn-secondary" id="clear">Clear</button>
+                    </div>
+                </div>
+
+                <div id="map"></div>
+
+            </div>
+
+            <div class="col-12 col-md-4">
+                <img src="{% static 'assets/map_image/fakeimg1.jpg' %}" alt="hazard" id="hazard">
+            </div>
+        </div>
+    </div>
+
+    <!-- 底板樣式 -->
+    <footer class="bd-footer py-4 py-md-5 mt-5 bg-dark">
+        <div class="container py-4 py-md-5 px-4 px-md-3">
+            <div class="row align-items-center">
+                <div class="text-center col-4 col-md-4" style="color:white">{{ Content.bottom_title }}</div>
+                <div class="text-left col-8 col-md-8" id="Contact" style="color:white">
+                    {{ Content.bottom_content }}<br>
+                    mail: {{ Content.bottom_email }}<br>
+                    call: {{ Content.bottom_phone }}
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- google api script -->
+    <script src="{% static 'js/MapPage.js' %}"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB318Fh6o7ni_x1MlswE4vtD1hUReq0L_s&callback=initMap&v=weekly"
+        defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- bootstrap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+</body>
+{% endfor %}
+
+</html>

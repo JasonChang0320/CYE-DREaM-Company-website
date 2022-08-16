@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-(0huu$7g10xk1@$vfdkf@yxy(a6e%$dy+fks#t9n7fnlmb024i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.0.100','*']
 
 
 # Application definition
@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     "about",
     "contact",
     "post",
+    "map",
+    "service",
 ]
 
 MIDDLEWARE = [
@@ -108,9 +110,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+# TIME_ZONE = 'UTC'
+
+LANGUAGE_CODE = 'zh-hant'
+TIME_ZONE = 'Asia/Taipei'
 
 USE_I18N = True
 
@@ -124,7 +129,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,"statics"),
 ]
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'statics/assets')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
