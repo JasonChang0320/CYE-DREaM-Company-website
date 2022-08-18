@@ -23,8 +23,5 @@ urlpatterns = [
     path("MapPage/",include("map.urls")),
     path("AboutUs/",include("about.urls")),
     path("Contact/",include("contact.urls")),
-    path("post/",include("post.urls")),
     path("Service/",include("service.urls"))
-    # path('post/', PostListView.as_view()),
-    # path('post_<pk>', PostDetailView.as_view())
 ]
