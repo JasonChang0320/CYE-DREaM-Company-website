@@ -38,3 +38,22 @@
     font-family: "Times New Roman";
     padding: 0;
 }
+
+#popWindow {
+    /*此行指定放置廣告的div */
+    width: 666px;
+    /*此行設定div的寬度*/
+    height: 488px;
+    /*此行設定div的高度*/
+    background: url("https://fakeimg.pl/666x488/");
+    /*此行設定div的背景圖形*/
+    box-shadow: 5px 5px 10px black;
+    /*此行設定div的外框陰影*/
+    border: 2px gray solid;
+    /*此行設定div的外框線條*/
+    border-radius: 20px;
+    /*此行設定div的外框圓角*/
+    position: fixed;
+    /*此行設定div為不隨捲動而移動的模式*/
+    z-index: 1;
+}
