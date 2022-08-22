@@ -1,25 +1,26 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-{% for content in aboutus_content %}
+
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/AboutUs.css' %}">
+    <link rel="stylesheet" href="{% static 'css/HomePage.css' %}">
     <title>CYE-DREaM</title>
 </head>
-
+{% for Service in service_title %}
 <body>
     <!-- 搜尋列(navbar) -->
     <nav class="navbar navbar-expand-lg navbar-light" style='background-color: #e3f2fd;'>
         <div class="container-xxl">
             <a class="navbar-brand" href="..">
-                <img src="../static/assets/{{ content.logo }}" alt="" width="30" height="24"
+                <img src="../static/assets/{{ Service.logo }}" alt="" width="30" height="24"
                     class="d-inline-block align-text-top">
-                {{content.name}}</a>
+                {{ Service.name }}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -34,85 +35,87 @@
                         <a class="nav-link" href="../MapPage">Map</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../Service">Service</a>
+                        <a class="nav-link" href="">Service</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">About us</a>
+                        <a class="nav-link" href="../AboutUs">About us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../Contact">Contact</a>
                     </li>
                 </ul>
                 <span class="navbar-text">
-                    English
+                    中文
                 </span>
             </div>
         </div>
     </nav>
 
-    <!-- 圖片大標(jumbotron) -->
-    <div class="p-5 mb-4 bg-light rounded-3">
-        <div class="container">
-            <h1 class="display-8 fw-bold">{{content.title}}</h1>
-            <hr>
-            <br>
-            <br>
-            <p class="col-12 col-md-8" style="width:100%">
-                {{content.content}}<br>
-            </p>
-        </div>
-    </div>
-
-
     <!-- 內文(col-12手機 col-md-3平板電腦) -->
-    <div class="p-5 mb-4 bg-light rounded-3">
-        <div class="container">
-            <h1 class="display-6 fw-bold">{{content.member_title}}</h1>
-            <hr>            
-            <br>
-            <br>
-            {% for member in member_content %}
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <img src="../static/assets/{{ member.pic_url }}" alt="pic">
+    <div class="container">
+        <h1 class="display-6 fw-bold mt-5">{{Service.title1}}</h1>
+        <hr>
+        <br>
+        <br>
+        {% for service in service_content %}
+            <div class="column mt-lg-1">
+                <div class="row col-12 col-md-12 mt-1">
+                    <div class="col-12 col-md-4 mt-1">
+                        <img src="../static/assets/{{ service.pic_url }}" class="img-fluid">
                     </div>
-                    <div class="col-12 col-md-3">
-                        {{member.name}}<br>
-                        {{member.experience1}}<br>
-
-                        {{member.experience2}}<br>
-                        {{member.experience3}}<br>
-                        {{member.experience4}}<br>
-                        {{member.phone}}<br>
-                    </div>
-                    <div class="col-12 col-md-5">
-                        {{member.introduce}}
+                    <div class="col-12 col-md-8 mt-4">
+                        <h3>{{service.title}}</h3>
+                        <p>{{service.content}}</p>
                     </div>
                 </div>
-            <br>
-            {% endfor %}
-        </div>
+            </div>
+        {% endfor %}
+
+        <h1 class="display-6 fw-bold mt-5">{{Service.title2}}</h1>
+        <hr>
+        <br>
+        <br>
+        {% for experience in experience_content %}
+            <div class="column mt-lg-1">
+                <div class="row col-12 col-md-12 mt-1">
+                    <div class="col-12 col-md-4 mt-4">
+                        <img src="../static/assets/{{ experience.pic_url }}" class="img-fluid">
+                    </div>
+                    <div class="col-12 col-md-8 mt-4">
+                        <h3>{{experience.title}}</h3>
+                        <p>{{experience.content}}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
     </div>
 
     <!-- 底板樣式 -->
     <footer class="bd-footer py-4 py-md-5 mt-5 bg-dark">
         <div class="container py-4 py-md-5 px-4 px-md-3">
             <div class="row align-items-center">
-                <div class="text-center col-4 col-md-4" style="color:white">{{ content.bottom_title }}</div>
+                <div class="text-center col-4 col-md-4" style="color:white">{{Service.bottom_title}}</div>
                 <div class="text-left col-8 col-md-8" id="Contact" style="color:white">
-                    {{ content.bottom_content }} <br>
-                    mail: {{ content.bottom_email }}<br>
-                    call: {{ content.bottom_phone }}
+                    {{Service.bottom_content}}<br>
+                    mail: {{Service.bottom_email}}<br>
+                    call: {{Service.bottom_phone}}
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- google api script -->
+    <script src="{% static 'js/HomePage.js' %}"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB318Fh6o7ni_x1MlswE4vtD1hUReq0L_s&callback=initMap&v=weekly"
+        defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- bootstrap script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+        </script>
 </body>
 {% endfor %}
+
 </html>
