@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
-from home.views import HomePageContentView
+from home.views import HomePageContentView, showHomepage_EN
 
 urlpatterns = [
     # path('admin', admin.site.urls),
     path('', HomePageContentView.as_view()),
+    path("en",showHomepage_EN)
     # path("map",views.show_google_map),
     # path("HomePage.geojson",views.grid_dataset)
 ]

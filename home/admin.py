@@ -1,10 +1,16 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import HomePage
+from .models import HomePage,HomePage_EN
 
 @admin.register(HomePage)
 class HomePage_Admin(admin.ModelAdmin):
+    list_display = ( 'name', 'title',"sub_title1","sub_title2","sub_title3","sub_title4")
+    search_fields = ( 'name', 'title',"sub_title1","sub_title2","sub_title3","sub_title4")
+    ordering = ("id",)
+
+@admin.register(HomePage_EN)
+class HomePage_EN_Admin(admin.ModelAdmin):
     list_display = ( 'name', 'title',"sub_title1","sub_title2","sub_title3","sub_title4")
     search_fields = ( 'name', 'title',"sub_title1","sub_title2","sub_title3","sub_title4")
     ordering = ("id",)

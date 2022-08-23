@@ -15,3 +15,12 @@ class MapPage(models.Model):
     bottom_phone=models.CharField('底部連絡電話', max_length=50,blank=True)
     def __str__(self):
         return self.name
+
+class MapPage_EN(models.Model):
+    name = models.CharField('公司名稱', max_length=50)
+    bottom_title=models.CharField('底部標題', max_length=50,blank=True)
+    bottom_content=models.TextField('底部內容', max_length=400,blank=True)
+    bottom_email=models.CharField('底部email', max_length=100,blank=True)
+    bottom_phone=models.CharField('底部連絡電話', max_length=50,blank=True)
+    def __str__(self):
+        return self.name

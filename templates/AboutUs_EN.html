@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+{% for content_EN in aboutus_content_EN %}
 {% for content in aboutus_content %}
 <head>
     <meta charset="UTF-8">
@@ -16,10 +17,10 @@
     <!-- 搜尋列(navbar) -->
     <nav class="navbar navbar-expand-lg navbar-light" style='background-color: #e3f2fd;'>
         <div class="container-xxl">
-            <a class="navbar-brand" href="..">
+            <a class="navbar-brand" href="../en">
                 <img src="../static/assets/{{ content.logo }}" alt="" width="30" height="24"
                     class="d-inline-block align-text-top">
-                {{content.name}}</a>
+                {{content_EN.name}}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -28,23 +29,23 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="..">Home</a>
+                        <a class="nav-link active" aria-current="page" href="../en">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../MapPage">Map</a>
+                        <a class="nav-link" href="../MapPage/en">Map</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../Service">Service</a>
+                        <a class="nav-link" href="../Service/en">Service</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">About us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../Contact">Contact</a>
+                        <a class="nav-link" href="../Contact/en">Contact</a>
                     </li>
                 </ul>
                 <span class="navbar-text">
-                    中文
+                    <a class="nav-link" href="../AboutUs">中文</a>
                 </span>
             </div>
         </div>
@@ -53,12 +54,12 @@
     <!-- 圖片大標(jumbotron) -->
     <div class="p-5 mb-4 bg-light rounded-3">
         <div class="container">
-            <h1 class="display-8 fw-bold">{{content.title}}</h1>
+            <h1 class="display-8 fw-bold">{{content_EN.title}}</h1>
             <hr>
             <br>
             <br>
             <p class="col-12 col-md-8" style="width:100%">
-                {{content.content}}<br>
+                {{content_EN.content}}<br>
             </p>
         </div>
     </div>
@@ -67,29 +68,29 @@
     <!-- 內文(col-12手機 col-md-3平板電腦) -->
     <div class="p-5 mb-4 bg-light rounded-3">
         <div class="container">
-            <h1 class="display-6 fw-bold">{{content.member_title}}</h1>
+            <h1 class="display-6 fw-bold">{{content_EN.member_title}}</h1>
             <hr>            
             <br>
             <br>
-            {% for member in member_content %}
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <img src="../static/assets/{{ member.pic_url }}" alt="pic">
-                    </div>
-                    <div class="col-12 col-md-3">
-                        {{member.name}}<br>
-                        {{member.experience1}}<br>
+            {% for member,member_en in zip_member %}
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <img src="../static/assets/{{ member.pic_url }}" alt="pic">
+                        </div>
+                        <div class="col-12 col-md-3">
+                            {{member_en.name}}<br>
+                            {{member_en.experience1}}<br>
 
-                        {{member.experience2}}<br>
-                        {{member.experience3}}<br>
-                        {{member.experience4}}<br>
-                        {{member.phone}}<br>
+                            {{member_en.experience2}}<br>
+                            {{member_en.experience3}}<br>
+                            {{member_en.experience4}}<br>
+                            {{member_en.phone}}<br>
+                        </div>
+                        <div class="col-12 col-md-5">
+                            {{member_en.introduce}}
+                        </div>
                     </div>
-                    <div class="col-12 col-md-5">
-                        {{member.introduce}}
-                    </div>
-                </div>
-            <br>
+                <br>
             {% endfor %}
         </div>
     </div>
@@ -98,11 +99,11 @@
     <footer class="bd-footer py-4 py-md-5 mt-5 bg-dark">
         <div class="container py-4 py-md-5 px-4 px-md-3">
             <div class="row align-items-center">
-                <div class="text-center col-4 col-md-4" style="color:white">{{ content.bottom_title }}</div>
+                <div class="text-center col-4 col-md-4" style="color:white">{{ content_EN.bottom_title }}</div>
                 <div class="text-left col-8 col-md-8" id="Contact" style="color:white">
-                    {{ content.bottom_content }} <br>
-                    mail: {{ content.bottom_email }}<br>
-                    call: {{ content.bottom_phone }}
+                    {{ content_EN.bottom_content }} <br>
+                    mail: {{ content_EN.bottom_email }}<br>
+                    call: {{ content_EN.bottom_phone }}
                 </div>
             </div>
         </div>
@@ -114,5 +115,6 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 </body>
+{% endfor %}
 {% endfor %}
 </html>

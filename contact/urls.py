@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from contact.views import ContactContentView
+from contact.views import ContactContentView,showContact_EN
 
 urlpatterns = [
     # path('admin', admin.site.urls),
-    path('', ContactContentView.as_view())
+    path('', ContactContentView.as_view()),
+    path("en",showContact_EN)
 ]

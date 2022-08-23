@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+{% for Content_EN in contact_content_EN %}
 {% for Content in contact_content %}
 <head>
     <meta charset="UTF-8">
@@ -16,10 +17,10 @@
     <!-- 搜尋列(navbar) -->
     <nav class="navbar navbar-expand-lg navbar-light" style='background-color: #e3f2fd;'>
         <div class="container-xxl">
-            <a class="navbar-brand" href="..">
+            <a class="navbar-brand" href="../en">
                 <img src="../static/assets/{{ Content.logo }}" alt="" width="30" height="24"
                     class="d-inline-block align-text-top">
-                    {{Content.name}}</a>
+                    {{Content_EN.name}}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -28,23 +29,23 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="..">Home</a>
+                        <a class="nav-link active" aria-current="page" href="../en">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../MapPage">Map</a>
+                        <a class="nav-link" href="../MapPage/en">Map</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../Service">Service</a>
+                        <a class="nav-link" href="../Service/en">Service</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../AboutUs">About us</a>
+                        <a class="nav-link" href="../AboutUs/en">About us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">Contact</a>
                     </li>
                 </ul>
                 <span class="navbar-text">
-                    中文
+                    <a class="nav-link" href="../Contact">中文</a>
                 </span>
             </div>
         </div>
@@ -57,18 +58,18 @@
             <br>
             <div class="row">
                 <div class="col-12 col-md-6">
-                    <h1 class="display-8 fw-bold">{{Content.title}}</h1>
+                    <h1 class="display-8 fw-bold">{{Content_EN.title}}</h1>
                     <br>
                     <br>
                     <span class="navbar-text">
-                        電話：{{Content.phone}}<br>
-                        Email: {{Content.email}}
+                        phone：{{Content_EN.phone}}<br>
+                        Email: {{Content_EN.email}}
                         <br>
                         <br>
                         <br>
-                        地址: {{Content.address}}
+                        address: {{Content_EN.address}}
                         <br>
-                        服務時間: {{Content.office_hour}}
+                        service hour: {{Content_EN.office_hour}}
                     </span>
                 </div>
                 <div class="col-12 col-md-6 mt-5">
@@ -87,11 +88,11 @@
     <footer class="bd-footer py-4 py-md-5 mt-5 bg-dark">
         <div class="container py-4 py-md-5 px-4 px-md-3">
             <div class="row align-items-center">
-                <div class="text-center col-4 col-md-4" style="color:white">{{ Content.bottom_title }}</div>
+                <div class="text-center col-4 col-md-4" style="color:white">{{ Content_EN.bottom_title }}</div>
                 <div class="text-left col-8 col-md-8" id="Contact" style="color:white">
-                    {{ Content.bottom_content }}<br>
-                    mail: {{ Content.bottom_email }}<br>
-                    call: {{ Content.phone }}
+                    {{ Content_EN.bottom_content }}<br>
+                    mail: {{ Content_EN.bottom_email }}<br>
+                    call: {{ Content_EN.phone }}
                 </div>
             </div>
         </div>
@@ -109,5 +110,6 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 </body>
+{% endfor %}
 {% endfor %}
 </html>

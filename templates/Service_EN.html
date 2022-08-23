@@ -12,15 +12,15 @@
     <link rel="stylesheet" href="{% static 'css/HomePage.css' %}">
     <title>CYE-DREaM</title>
 </head>
-{% for Service in service_title %}
+{% for title,title_en in service_title %}
 <body>
     <!-- 搜尋列(navbar) -->
     <nav class="navbar navbar-expand-lg navbar-light" style='background-color: #e3f2fd;'>
         <div class="container-xxl">
-            <a class="navbar-brand" href="..">
-                <img src="../static/assets/{{ Service.logo }}" alt="" width="30" height="24"
+            <a class="navbar-brand" href="../en">
+                <img src="../static/assets/{{ title.logo }}" alt="" width="30" height="24"
                     class="d-inline-block align-text-top">
-                {{ Service.name }}</a>
+                {{ title_en.name }}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -29,23 +29,23 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="..">Home</a>
+                        <a class="nav-link active" aria-current="page" href="../en">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../MapPage">Map</a>
+                        <a class="nav-link" href="../MapPage/en">Map</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">Service</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../AboutUs">About us</a>
+                        <a class="nav-link" href="../AboutUs/en">About us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../Contact">Contact</a>
+                        <a class="nav-link" href="../Contact/en">Contact</a>
                     </li>
                 </ul>
                 <span class="navbar-text">
-                    中文
+                    <a class="nav-link" href="../Service">中文</a>
                 </span>
             </div>
         </div>
@@ -53,37 +53,37 @@
 
     <!-- 內文(col-12手機 col-md-3平板電腦) -->
     <div class="container">
-        <h1 class="display-6 fw-bold mt-5">{{Service.title1}}</h1>
+        <h1 class="display-6 fw-bold mt-5">{{title_en.title1}}</h1>
         <hr>
         <br>
         <br>
-        {% for service in service_content %}
+        {% for service,service_en in service_content %}
             <div class="column mt-lg-1">
                 <div class="row col-12 col-md-12 mt-1">
                     <div class="col-12 col-md-4 mt-1">
                         <img src="../static/assets/{{ service.pic_url }}" class="img-fluid">
                     </div>
                     <div class="col-12 col-md-8 mt-4">
-                        <h3>{{service.title}}</h3>
-                        <p>{{service.content}}</p>
+                        <h3>{{service_en.title}}</h3>
+                        <p>{{service_en.content}}</p>
                     </div>
                 </div>
             </div>
         {% endfor %}
 
-        <h1 class="display-6 fw-bold mt-5">{{Service.title2}}</h1>
+        <h1 class="display-6 fw-bold mt-5">{{title_en.title2}}</h1>
         <hr>
         <br>
         <br>
-        {% for experience in experience_content %}
+        {% for experience,experinece_en in experience_content %}
             <div class="column mt-lg-1">
                 <div class="row col-12 col-md-12 mt-1">
                     <div class="col-12 col-md-4 mt-4">
                         <img src="../static/assets/{{ experience.pic_url }}" class="img-fluid">
                     </div>
                     <div class="col-12 col-md-8 mt-4">
-                        <h3>{{experience.title}}</h3>
-                        <p>{{experience.content}}</p>
+                        <h3>{{experinece_en.title}}</h3>
+                        <p>{{experinece_en.content}}</p>
                     </div>
                 </div>
             </div>
@@ -94,11 +94,11 @@
     <footer class="bd-footer py-4 py-md-5 mt-5 bg-dark">
         <div class="container py-4 py-md-5 px-4 px-md-3">
             <div class="row align-items-center">
-                <div class="text-center col-4 col-md-4" style="color:white">{{Service.bottom_title}}</div>
+                <div class="text-center col-4 col-md-4" style="color:white">{{title_en.bottom_title}}</div>
                 <div class="text-left col-8 col-md-8" id="Contact" style="color:white">
-                    {{Service.bottom_content}}<br>
-                    mail: {{Service.bottom_email}}<br>
-                    call: {{Service.bottom_phone}}
+                    {{title_en.bottom_content}}<br>
+                    mail: {{title_en.bottom_email}}<br>
+                    call: {{title_en.bottom_phone}}
                 </div>
             </div>
         </div>

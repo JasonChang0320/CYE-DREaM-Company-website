@@ -1,7 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-{% for Content in MapPage_content %}
+{% for Content,Content_en in MapPage_content %}
 
 <head>
     <meta charset="UTF-8">
@@ -21,10 +21,10 @@
     <!-- 搜尋列(navbar) -->
     <nav class="navbar navbar-expand-lg navbar-light" style='background-color: #e3f2fd;'>
         <div class="container-xxl">
-            <a class="navbar-brand" href="..">
+            <a class="navbar-brand" href="../en">
                 <img src="../static/assets/{{ Content.logo }}" alt="" width="30" height="24"
                     class="d-inline-block align-text-top">
-                {{ Content.name }}</a>
+                {{ Content_en.name }}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -33,23 +33,23 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="..">Home</a>
+                        <a class="nav-link active" aria-current="page" href="../en">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">Map</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../Service">Service</a>
+                        <a class="nav-link" href="../Service/en">Service</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../AboutUs">About us</a>
+                        <a class="nav-link" href="../AboutUs/en">About us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../Contact">Contact</a>
+                        <a class="nav-link" href="../Contact/en">Contact</a>
                     </li>
                 </ul>
                 <span class="navbar-text">
-                    中文
+                    <a class="nav-link" href="../MapPage">中文</a>
                 </span>
             </div>
         </div>
@@ -59,14 +59,14 @@
     <div id="popWindow">
         <div class="container" >
             <div class="row align-items-center justify-content-center" style="height:488px">
-                <div class="text-center"><label for="name">姓名</label>
+                <div class="text-center"><label for="name">Name:</label>
                 <input id="name" name="name" type="text" size="10"></div>
-                <div class="text-center"><label for="name">Email</label>
+                <div class="text-center"><label for="name">Email:</label>
                 <input id="name" name="name" type="text" size="10"></div>
-                <div class="text-center"><label for="name">職稱</label>
+                <div class="text-center"><label for="name">Affiliation:</label>
                 <input id="name" name="name" type="text" size="10"></div>
                 <div class="text-center">
-                <input id="subbmit" type="button" value="送出"></div>
+                <input id="subbmit" type="button" value="Send"></div>
             </div>
         </div>
     </div>
@@ -129,11 +129,11 @@
     <footer class="bd-footer py-4 py-md-5 mt-5 bg-dark">
         <div class="container py-4 py-md-5 px-4 px-md-3">
             <div class="row align-items-center">
-                <div class="text-center col-4 col-md-4" style="color:white">{{ Content.bottom_title }}</div>
+                <div class="text-center col-4 col-md-4" style="color:white">{{ Content_en.bottom_title }}</div>
                 <div class="text-left col-8 col-md-8" id="Contact" style="color:white">
-                    {{ Content.bottom_content }}<br>
-                    mail: {{ Content.bottom_email }}<br>
-                    call: {{ Content.bottom_phone }}
+                    {{ Content_en.bottom_content }}<br>
+                    mail: {{ Content_en.bottom_email }}<br>
+                    call: {{ Content_en.bottom_phone }}
                 </div>
             </div>
         </div>
