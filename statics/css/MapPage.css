@@ -57,3 +57,15 @@
     /*此行設定div為不隨捲動而移動的模式*/
     z-index: 1;
 }
+
+#form{
+    padding-top: 5%;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 13%;
+}
+
+#input_bar{
+    margin-bottom: 10%;
+}
+

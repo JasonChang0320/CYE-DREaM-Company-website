@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Map_Image,MapPage,MapPage_EN
+from .models import Map_Image,MapPage,MapPage_EN,Visitor_Info
 
 # Register your models here.
 
@@ -15,3 +15,8 @@ class MapPage_Admin(admin.ModelAdmin):
 @admin.register(MapPage_EN)
 class MapPage_EN_Admin(admin.ModelAdmin):
     list_display = ( "name","bottom_title","bottom_content","bottom_email","bottom_phone")
+
+@admin.register(Visitor_Info)
+class Visitor_Info_Admin(admin.ModelAdmin):
+    list_display = ( "name","email","job_title")
+    ordering = ("id",)

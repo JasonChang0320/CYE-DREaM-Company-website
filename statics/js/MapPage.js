@@ -159,7 +159,7 @@ function centerHandler() {
         left: myLeft
     });
     /*設定區塊於水平與垂直置中*/
-    $('#subbmit').click(function () {
+    $('#submit').click(function () {
         $('#popWindow').hide();
     });
 }

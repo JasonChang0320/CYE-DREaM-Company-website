@@ -1,13 +1,24 @@
 import imp
 from django.shortcuts import render
 import json
-from django.http import JsonResponse
+from django.http import JsonResponse,HttpResponseRedirect
 from .models import MapPage,MapPage_EN
+from .form import VisitorForm
 
 # Create your views here.
 def showMapPage(request):
-    MapPage_content=MapPage.objects.all()
-    return render(request, 'MapPage.html',{"MapPage_content":MapPage_content})
+    submit=False
+    if request.method == "POST":
+        form= VisitorForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect("/MapPage?submit==True")
+    else:
+        form=VisitorForm
+        if "submit" in request.GET:
+            submit=True
+        MapPage_content=MapPage.objects.all()
+    return render(request, 'MapPage.html',{"MapPage_content":MapPage_content,"form":form,"submit":submit})
 
 def showMapPage_EN(request):
     MapPage_content=MapPage.objects.all()
