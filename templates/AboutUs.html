@@ -75,19 +75,15 @@
             {% for member in member_content %}
                 <div class="row">
                     <div class="col-12 col-md-4">
-                        <img src="../static/assets/{{ member.pic_url }}" alt="pic">
+                        <img src="../static/assets/{{ member.pic_url }}" alt="pic" width="100%">
                     </div>
-                    <div class="col-12 col-md-3">
-                        {{member.name}}<br>
-                        {{member.experience1}}<br>
-
-                        {{member.experience2}}<br>
-                        {{member.experience3}}<br>
-                        {{member.experience4}}<br>
-                        {{member.phone}}<br>
-                    </div>
-                    <div class="col-12 col-md-5">
-                        {{member.introduce}}
+                    <div class="col-12 col-md-8">
+                        <span style="font-size:140%;font-weight:bold;">{{member.name}}</span><br><br>
+                        {{member.experience1}}<br><br>
+                        {{member.experience2}}<br><br>
+                        {{member.experience3}}<br><br>
+                        {{member.experience4}}<br><br>
+                        {{member.phone}}<br><br>
                     </div>
                 </div>
             <br>
