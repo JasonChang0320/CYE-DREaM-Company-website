@@ -74,24 +74,20 @@
             <br>
             <br>
             {% for member,member_en in zip_member %}
-                    <div class="row">
-                        <div class="col-12 col-md-4">
-                            <img src="../static/assets/{{ member.pic_url }}" alt="pic">
-                        </div>
-                        <div class="col-12 col-md-3">
-                            {{member_en.name}}<br>
-                            {{member_en.experience1}}<br>
-
-                            {{member_en.experience2}}<br>
-                            {{member_en.experience3}}<br>
-                            {{member_en.experience4}}<br>
-                            {{member_en.phone}}<br>
-                        </div>
-                        <div class="col-12 col-md-5">
-                            {{member_en.introduce}}
-                        </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <img src="../static/assets/{{ member.pic_url }}" alt="pic" width="100%">
                     </div>
-                <br>
+                    <div class="col-12 col-md-8">
+                        <span style="font-size:140%;font-weight:bold;">{{member_en.name}}</span><br><br>
+                            {{member_en.experience1}}<br><br>
+                            {{member_en.experience2}}<br><br>
+                            {{member_en.experience3}}<br><br>
+                            {{member_en.experience4}}<br><br>
+                            {{member_en.phone}}<br><br>
+                    </div>
+                </div>
+            <br>
             {% endfor %}
         </div>
     </div>
