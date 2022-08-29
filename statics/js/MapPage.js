@@ -106,6 +106,11 @@ function initMap() {
                 FalutLayer.loadGeoJson('fault.geojson'); //載入10格子資料(用google api載)
             }
             FalutLayer.setMap(map);
+
+            FalutLayer.setStyle({ //設定屬性
+                strokeColor: '#ff0000'
+            });
+
         } else {
             FalutLayer.setMap(null);
         }
