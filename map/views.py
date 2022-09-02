@@ -1,20 +1,43 @@
-import imp
+from django.conf import settings
+from django.core.mail import EmailMessage
 from django.shortcuts import render
 import json
 from django.http import JsonResponse,HttpResponseRedirect
-from .models import MapPage,MapPage_EN
+from .models import MapPage,MapPage_EN, Visitor_Info
 from .form import VisitorForm,VisitorForm_EN
 from django.utils.crypto import get_random_string
+
+def send_email(title,content,from_user,to_user):
+    email= EmailMessage(
+        title,
+        content,
+        from_user,
+        [to_user]
+    )
+    email.fail_silently = False
+    email.send()
+    print("Email Send")
 
 # Create your views here.
 def showMapPage(request):
     submit=False
     token_length=32
+    db_patient_length=5
     random_token=get_random_string(length=token_length)
     if request.method == "POST":
         form= VisitorForm(request.POST)
         if form.is_valid():
             form.save()
+            num=len(Visitor_Info.objects.all())
+            if num % db_patient_length == 0 and num!=0:
+                try:
+                    send_email(title='Django Database 提醒',
+                                content=f"資料庫已有{num}筆資料",
+                                from_user=settings.EMAIL_HOST_USER,
+                                to_user='jason032089@gmail.com'
+                    )
+                except:
+                    pass
             return HttpResponseRedirect(f"/MapPage?{random_token}")
     else:
         form=VisitorForm
