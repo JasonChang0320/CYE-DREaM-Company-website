@@ -18,5 +18,5 @@ class MapPage_EN_Admin(admin.ModelAdmin):
 
 @admin.register(Visitor_Info)
 class Visitor_Info_Admin(admin.ModelAdmin):
-    list_display = ( "name","email","job_title")
+    list_display = ( "name","email","job_title","create_time")
     ordering = ("id",)
