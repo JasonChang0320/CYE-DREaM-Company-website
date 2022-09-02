@@ -11,20 +11,28 @@ def showMapPage(request):
     submit=False
     token_length=32
     random_token=get_random_string(length=token_length)
-    if request.method == "POST":
-        form= VisitorForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect(f"/MapPage?{random_token}")
+    cookie="LoginCookie"
+    if cookie in request.COOKIES:
+        submit=True
+        MapPage_content=MapPage.objects.all()
+        return render(request, 'MapPage.html',{"MapPage_content":MapPage_content,"submit":submit,"token":random_token})
     else:
-        form=VisitorForm
-        key="100"
-        for key in request.GET.keys():
-            pass
-        if len(key)==token_length:
-            submit=True
-    MapPage_content=MapPage.objects.all()
-    return render(request, 'MapPage.html',{"MapPage_content":MapPage_content,"form":form,"submit":submit,"token":random_token})
+        if request.method == "POST":
+            form= VisitorForm(request.POST)
+            if form.is_valid():
+                form.save()
+                response = HttpResponseRedirect(f"/MapPage?{random_token}")
+                response.set_cookie("LoginCookie","login",max_age=3600)
+                return response
+        else:
+            form=VisitorForm
+            key="100"
+            for key in request.GET.keys():
+                pass
+            if len(key)==token_length:
+                submit=True
+        MapPage_content=MapPage.objects.all()
+        return render(request, 'MapPage.html',{"MapPage_content":MapPage_content,"form":form,"submit":submit,"token":random_token})
 
 def showMapPage_EN(request):
     submit=False
