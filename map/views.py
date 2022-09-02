@@ -34,7 +34,7 @@ def showMapPage(request):
                     send_email(title='Django Database 提醒',
                                 content=f"資料庫已有{num}筆資料",
                                 from_user=settings.EMAIL_HOST_USER,
-                                to_user='jason032089@gmail.com'
+                                to_user=settings.EMAIL_HOST_USER
                     )
                 except:
                     pass
@@ -53,10 +53,21 @@ def showMapPage_EN(request):
     submit=False
     token_length=32
     random_token=get_random_string(length=32)
+    db_patient_length=5
     if request.method == "POST":
         form= VisitorForm_EN(request.POST)
         if form.is_valid():
             form.save()
+            num=len(Visitor_Info.objects.all())
+            if num % db_patient_length == 0 and num!=0:
+                try:
+                    send_email(title='Django Database 提醒',
+                                content=f"資料庫已有{num}筆資料",
+                                from_user=settings.EMAIL_HOST_USER,
+                                to_user=settings.EMAIL_HOST_USER
+                    )
+                except:
+                    pass
             return HttpResponseRedirect(f"/MapPage/en?{random_token}")
     else:
         form=VisitorForm_EN
