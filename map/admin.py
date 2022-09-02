@@ -10,11 +10,11 @@ class Map_Image_Admin(admin.ModelAdmin):
 
 @admin.register(MapPage)
 class MapPage_Admin(admin.ModelAdmin):
-    list_display = ( "name","logo","bottom_title","bottom_content","bottom_email","bottom_phone")
+    list_display = ( "name","logo","form_title","form_image","bottom_title","bottom_content","bottom_email","bottom_phone")
 
 @admin.register(MapPage_EN)
 class MapPage_EN_Admin(admin.ModelAdmin):
-    list_display = ( "name","bottom_title","bottom_content","bottom_email","bottom_phone")
+    list_display = ( "name","form_title","bottom_title","bottom_content","bottom_email","bottom_phone")
 
 @admin.register(Visitor_Info)
 class Visitor_Info_Admin(admin.ModelAdmin):
