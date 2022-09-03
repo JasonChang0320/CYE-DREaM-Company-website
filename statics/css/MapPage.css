@@ -58,3 +58,12 @@
     z-index: 1;
 }
 
+#submit{
+    border-radius: 20px;
+    font-family: 'Times New Roman';
+}
+
+@media (min-width: 1400px){
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1400px;
+}}

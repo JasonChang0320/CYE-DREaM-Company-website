@@ -133,13 +133,29 @@
             </div>
         </div>
     {% else %}
-        <div class="container">
-            <form id="form" action="" method=POST>
-                {% csrf_token %}
-                {{ form.as_p}}
-                <input id="submit" type="submit" value="送出" class="btn btn-secondary"></div>
-            </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-7">
+                <p class="mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nobis repudiandae omnis voluptas
+                    asperiores? Reiciendis beatae provident facere harum recusandae repellat impedit soluta veritatis
+                    consequuntur sunt cum, voluptates ab repellendus Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nobis repudiandae omnis voluptas
+                    asperiores? Reiciendis beatae provident facere harum recusandae repellat impedit soluta veritatis
+                    consequuntur sunt cum, voluptates ab repellendus.</p>
+            </div>
+            <div class="col-12 col-md-5">
+                <center>
+                    <form class="mt-5" id="form" action="" method=POST style="width:80%">
+                        {% csrf_token %}
+                        {{ form.as_p}}
+                        <input class="btn-primary" id="submit" type="submit" value="submit" class="btn btn-secondary text-center">
+                    </form>
+                </center>
+            </div>
+            <div class="col-12 col-md-12">
+                <img src="{% static 'assets/map_image/book_cover.png' %}" alt="hazard" style="width:100%;">
+            </div>
         </div>
+    </div>
     {% endif %}
 
     <!-- 底板樣式 -->
