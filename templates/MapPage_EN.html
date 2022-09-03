@@ -134,13 +134,11 @@
         </div>
     {% else %}
         <div class="container">
-            <center>
-                <form id="form" action="" method=POST>
-                    {% csrf_token %}
-                    {{ form.as_p}}
-                    <input id="submit" type="submit" value="送出" class="btn btn-secondary"></div>
-                </form>
-            </center>
+            <form id="form" action="" method=POST>
+                {% csrf_token %}
+                {{ form.as_p}}
+                <input id="submit" type="submit" value="送出" class="btn btn-secondary"></div>
+            </form>
         </div>
     {% endif %}
 
