@@ -34,6 +34,16 @@ def showMapPage(request):
             form= VisitorForm(request.POST)
             if form.is_valid():
                 form.save()
+                num=len(Visitor_Info.objects.all())
+                if num % db_patient_length == 0 and num!=0:
+                    try:
+                        send_email(title='Django Database 提醒',
+                                    content=f"資料庫已有{num}筆資料",
+                                    from_user=settings.EMAIL_HOST_USER,
+                                    to_user=settings.EMAIL_HOST_USER
+                        )
+                    except:
+                        pass
                 response = HttpResponseRedirect(f"/MapPage?{random_token}")
                 response.set_cookie("LoginCookie","login",max_age=3600)
                 return response
