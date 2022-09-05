@@ -121,11 +121,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-7">
-                <p class="mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nobis repudiandae omnis voluptas
-                    asperiores? Reiciendis beatae provident facere harum recusandae repellat impedit soluta veritatis
-                    consequuntur sunt cum, voluptates ab repellendus Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nobis repudiandae omnis voluptas
-                    asperiores? Reiciendis beatae provident facere harum recusandae repellat impedit soluta veritatis
-                    consequuntur sunt cum, voluptates ab repellendus.</p>
+                <p class="mt-5">{{ Content.form_title }}</p>
             </div>
             <div class="col-12 col-md-5">
                 <center>
@@ -137,7 +133,7 @@
                 </center>
             </div>
             <div class="col-12 col-md-12">
-                <img src="{% static 'assets/map_image/book_cover.png' %}" alt="hazard" style="width:100%;">
+                <img src="../static/assets/{{ Content.form_image }}" alt="hazard" style="width:100%;">
             </div>
         </div>
     </div>

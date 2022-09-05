@@ -56,7 +56,9 @@ def showMapPage_EN(request):
     if cookie_key in request.COOKIES:
         submit=True
         MapPage_content=MapPage.objects.all()
-        return render(request, 'MapPage.html',{"MapPage_content":MapPage_content,"submit":submit,"token":random_token})
+        MapPage_EN_content=MapPage_EN.objects.all()
+        zip_MapPage=zip(MapPage_content,MapPage_EN_content)
+        return render(request, 'MapPage_EN.html',{"MapPage_content":zip_MapPage,"submit":submit,"token":random_token})
     else:
         if request.method == "POST":
             form= VisitorForm_EN(request.POST)
