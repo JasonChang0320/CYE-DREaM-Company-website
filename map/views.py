@@ -84,7 +84,9 @@ def showMapPage_EN(request):
                         )
                     except:
                         pass
-                return HttpResponseRedirect(f"/MapPage/en?{random_token}")
+                response = HttpResponseRedirect(f"/MapPage/en?{random_token}")
+                response.set_cookie("LoginCookie","login",max_age=3600)
+                return response
         else:
             form=VisitorForm_EN
             key="100"
