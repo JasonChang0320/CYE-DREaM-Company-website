@@ -61,10 +61,10 @@
         {% for service in service_content %}
             <div class="column mt-lg-1">
                 <div class="row col-12 col-md-12 mt-1">
-                    <div class="col-12 col-md-4 mt-1">
-                        <img src="../static/assets/{{ service.pic_url }}" class="img-fluid">
+                    <div class="col-12 col-md-5 mt-1 p-3">
+                        <img src="../static/assets/{{ service.pic_url }}" class="img-fluid" style="width:100%">
                     </div>
-                    <div class="col-12 col-md-8 mt-4">
+                    <div class="col-12 col-md-7 mt-4">
                         <h3>{{service.title}}</h3>
                         <p>{{service.content}}</p>
                     </div>
@@ -76,13 +76,59 @@
         <hr>
         <br>
         <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="col-1"></th>
+                    <th class="col-3">委託單位</th>
+                    <th class="col-8 text-center">摘要</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2" class="text-center">1</td>
+                    <td class="text-center">1-摘要</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text-center">2</td>
+                    <td class="text-center">2-摘要</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text-center">3</td>
+                    <td class="text-center">3-摘要</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text-center">4</td>
+                    <td class="text-center">4-摘要</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text-center">5</td>
+                    <td class="text-center">5-摘要</td>
+                </tr>
+                <tr>
+                    <td rowspan="3" class="align-middle text-center">6</td>
+                    <td class="text-center">6-1</td>
+                    <td class="text-center">6-1摘要</td>
+                </tr>
+                <tr>
+                    <td class="text-center">6-2</td>
+                    <td class="text-center">6-2摘要</td>
+                </tr>
+                <tr>
+                    <td class="text-center">6-3</td>
+                    <td class="text-center">6-3摘要</td>
+                </tr>
+            </tbody>
+
+        </table>
+        
         {% for experience in experience_content %}
             <div class="column mt-lg-1">
                 <div class="row col-12 col-md-12 mt-1">
-                    <div class="col-12 col-md-4 mt-4">
-                        <img src="../static/assets/{{ experience.pic_url }}" class="img-fluid">
+                    <div class="col-12 col-md-5 mt-4">
+                        <img src="../static/assets/{{ experience.pic_url }}" class="img-fluid" style="width:100%">
                     </div>
-                    <div class="col-12 col-md-8 mt-4">
+                    <div class="col-12 col-md-7 mt-4">
                         <h3>{{experience.title}}</h3>
                         <p>{{experience.content}}</p>
                     </div>
