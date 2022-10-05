@@ -85,44 +85,25 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td colspan="2" class="text-center">1</td>
-                    <td class="text-center">1-摘要</td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="text-center">2</td>
-                    <td class="text-center">2-摘要</td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="text-center">3</td>
-                    <td class="text-center">3-摘要</td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="text-center">4</td>
-                    <td class="text-center">4-摘要</td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="text-center">5</td>
-                    <td class="text-center">5-摘要</td>
-                </tr>
-                <tr>
-                    <td rowspan="3" class="align-middle text-center">6</td>
-                    <td class="text-center">6-1</td>
-                    <td class="text-center">6-1摘要</td>
-                </tr>
-                <tr>
-                    <td class="text-center">6-2</td>
-                    <td class="text-center">6-2摘要</td>
-                </tr>
-                <tr>
-                    <td class="text-center">6-3</td>
-                    <td class="text-center">6-3摘要</td>
-                </tr>
+                {% for experience in experience_content %}
+                    <tr>
+                        <td colspan="2" class="text-center">{{experience.title}}</td>
+                        <td class="text-center">{{experience.content}}</td>
+                    </tr>
+                {% endfor %}
+                <td rowspan="4" class="align-middle text-center">科技部</td>
+                {% for project in NSTC_project %}
+                    <tr>
+                        <!-- <td rowspan="3" class="align-middle text-center">科技部</td> -->
+                        <td class="text-center">{{project.project}}</td>
+                        <td class="text-center">{{project.content}}</td>
+                    </tr>
+                {% endfor %}
             </tbody>
 
         </table>
         
-        {% for experience in experience_content %}
+        <!-- {% for experience in experience_content %}
             <div class="column mt-lg-1">
                 <div class="row col-12 col-md-12 mt-1">
                     <div class="col-12 col-md-5 mt-4">
@@ -134,7 +115,7 @@
                     </div>
                 </div>
             </div>
-        {% endfor %}
+        {% endfor %} -->
     </div>
 
     <!-- 底板樣式 -->

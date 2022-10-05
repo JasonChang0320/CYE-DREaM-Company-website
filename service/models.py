@@ -10,13 +10,6 @@ class Service(models.Model):
     def __str__(self):
         return self.title
 
-class Experience(models.Model):
-    title = models.CharField('標題', max_length=50)
-    content=models.TextField("內容", max_length=200,blank=True)
-    pic_url = models.ImageField("照片",storage=OverwriteStorage(),upload_to='Service/experience_image',blank=True)
-    def __str__(self):
-        return self.title
-
 class Service_Title(models.Model):
     name = models.CharField('公司名稱', max_length=50)
     logo= models.ImageField("公司logo",storage=OverwriteStorage(),upload_to='',blank=True)
@@ -35,12 +28,6 @@ class Service_EN(models.Model):
     def __str__(self):
         return self.title
 
-class Experience_EN(models.Model):
-    title = models.CharField('標題', max_length=150)
-    content=models.TextField("內容", max_length=1500,blank=True)
-    def __str__(self):
-        return self.title
-
 class Service_Title_EN(models.Model):
     name = models.CharField('公司名稱', max_length=50)
     title1 = models.CharField('主題名稱1', max_length=50)
@@ -51,3 +38,24 @@ class Service_Title_EN(models.Model):
     bottom_phone=models.CharField('底部連絡電話', max_length=100,blank=True)
     def __str__(self):
         return self.name
+
+class Experience(models.Model):
+    title = models.CharField('委託單位', max_length=50)
+    content=models.TextField("摘要", max_length=500,blank=True)
+    # pic_url = models.ImageField("照片",storage=OverwriteStorage(),upload_to='Service/experience_image',blank=True)
+    def __str__(self):
+        return self.title
+
+class Experience_EN(models.Model):
+    title = models.CharField('標題', max_length=150)
+    content=models.TextField("內容", max_length=1500,blank=True)
+    def __str__(self):
+        return self.title
+
+class NSTC_project(models.Model):
+    project=models.CharField('計畫', max_length=50)
+    content=models.TextField("摘要", max_length=500,blank=True)
+
+class NSTC_project_EN(models.Model):
+    project=models.CharField('計畫', max_length=50)
+    content=models.TextField("摘要", max_length=500,blank=True)

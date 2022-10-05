@@ -1,5 +1,5 @@
 from django.shortcuts import render,HttpResponse
-from .models import Service,Experience,Service_Title,Service_Title_EN,Service_EN,Experience_EN
+from .models import *
 
 # Create your views here.
 def showtemplate(request):
@@ -9,7 +9,8 @@ def showService(request):
     title=Service_Title.objects.all()
     service=Service.objects.all()
     experience=Experience.objects.all()
-    return render(request,"Service.html",{"service_title":title,"service_content":service,"experience_content":experience})
+    NSTC=NSTC_project.objects.all()
+    return render(request,"Service.html",{"service_title":title,"service_content":service,"experience_content":experience,"NSTC_project":NSTC})
 
 def showService_EN(request):
     title=Service_Title.objects.all()
