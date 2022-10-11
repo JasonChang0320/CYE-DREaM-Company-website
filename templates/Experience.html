@@ -13,15 +13,15 @@
     <link rel="stylesheet" href="{% static 'css/HomePage.css' %}">
     <title>CYE-DREaM</title>
 </head>
-{% for Service in service_title %}
+{% for Experience in experience_title %}
 <body>
     <!-- 搜尋列(navbar) -->
     <nav class="navbar navbar-expand-lg navbar-light" style='background-color: #e3f2fd;'>
         <div class="container-xxl">
             <a class="navbar-brand" href="..">
-                <img src="../static/assets/{{ Service.logo }}" alt="" height="30"
+                <img src="../static/assets/{{ Experience.logo }}" alt="" height="30"
                     class="d-inline-block align-text-top">
-                {{ Service.name }}</a>
+                {{ Experience.name }}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -36,10 +36,10 @@
                         <a class="nav-link" href="../MapPage">地圖</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">服務</a>
+                        <a class="nav-link" href="../Service">服務</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../Experience">經歷</a>
+                        <a class="nav-link" href="">經歷</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../AboutUs">關於我們</a>
@@ -57,7 +57,7 @@
 
     <!-- 內文(col-12手機 col-md-3平板電腦) -->
     <div class="container">
-        <h1 class="display-6 fw-bold mt-5">{{Service.title1}}</h1>
+        <!-- <h1 class="display-6 fw-bold mt-5">{{Service.title1}}</h1>
         <hr>
         <br>
         <br>
@@ -73,9 +73,9 @@
                     </div>
                 </div>
             </div>
-        {% endfor %}
+        {% endfor %} -->
 
-        <h1 class="display-6 fw-bold mt-5">{{Service.title2}}</h1>
+        <h1 class="display-6 fw-bold mt-5">{{Experience.title}}</h1>
         <hr>
         <br>
         <br>
@@ -94,7 +94,7 @@
                         <td class="text-center">{{experience.content}}</td>
                     </tr>
                 {% endfor %}
-                <td rowspan="4" class="align-middle text-center">科技部</td>
+                <td rowspan="10" class="align-middle text-center">科技部</td>
                 {% for project in NSTC_project %}
                     <tr>
                         <!-- <td rowspan="3" class="align-middle text-center">科技部</td> -->
@@ -125,11 +125,11 @@
     <footer class="bd-footer py-4 py-md-5 mt-5 bg-dark">
         <div class="container py-4 py-md-5 px-4 px-md-3">
             <div class="row align-items-center">
-                <div class="text-center col-4 col-md-4" style="color:white">{{Service.bottom_title}}</div>
+                <div class="text-center col-4 col-md-4" style="color:white">{{Experience.bottom_title}}</div>
                 <div class="text-left col-8 col-md-8" id="Contact" style="color:white">
-                    {{Service.bottom_content}}<br>
-                    mail: {{Service.bottom_email}}<br>
-                    call: {{Service.bottom_phone}}
+                    {{Experience.bottom_content}}<br>
+                    mail: {{Experience.bottom_email}}<br>
+                    call: {{Experience.bottom_phone}}
                 </div>
             </div>
         </div>
