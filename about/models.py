@@ -6,7 +6,7 @@ class AboutContent(models.Model):
     name = models.CharField('公司名稱', max_length=20)
     logo= models.ImageField("公司logo",storage=OverwriteStorage(),upload_to='',blank=True)
     title = models.CharField('標題', max_length=20)
-    content=models.TextField("內容", max_length=200,blank=True)
+    content=models.TextField("內容", max_length=600,blank=True)
     member_title=models.CharField('成員標題', max_length=20)
     bottom_title=models.CharField('底部標題', max_length=20,blank=True)
     bottom_content=models.TextField('底部內容', max_length=300,blank=True)

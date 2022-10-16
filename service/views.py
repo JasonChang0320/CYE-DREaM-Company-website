@@ -8,18 +8,13 @@ def showtemplate(request):
 def showService(request):
     title=Service_Title.objects.all()
     service=Service.objects.all()
-    experience=Experience.objects.all()
-    NSTC=NSTC_project.objects.all()
-    return render(request,"Service.html",{"service_title":title,"service_content":service,"experience_content":experience,"NSTC_project":NSTC})
+    return render(request,"Service.html",{"service_title":title,"service_content":service})
 
 def showService_EN(request):
     title=Service_Title.objects.all()
     title_EN=Service_Title_EN.objects.all()
     service=Service.objects.all()
-    experience=Experience.objects.all()
     service_EN=Service_EN.objects.all()
-    experience_EN=Experience_EN.objects.all()
     zip_title=zip(title,title_EN)
     zip_service=zip(service,service_EN)
-    zip_experience=zip(experience,experience_EN)
-    return render(request,"Service_EN.html",{"service_title":zip_title,"service_content":zip_service,"experience_content":zip_experience})
+    return render(request,"Service_EN.html",{"service_title":zip_title,"service_content":zip_service})
