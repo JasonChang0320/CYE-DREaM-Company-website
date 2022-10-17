@@ -48,9 +48,9 @@
                         <a class="nav-link" href="../Contact">聯絡我們</a>
                     </li>
                 </ul>
-                <span class="navbar-text">
+                <!-- <span class="navbar-text">
                     <a class="nav-link" href="en">English</a>
-                </span>
+                </span> -->
             </div>
         </div>
     </nav>
@@ -68,7 +68,7 @@
                         <img src="../static/assets/{{ service.pic_url }}" class="img-fluid" style="width:100%">
                     </div>
                     <div class="col-12 col-md-7 mt-4">
-                        <h3 style="width:100%;font-size:200%;">{{service.title}}</h3>
+                        <h3 style="width:100%;font-size:200%;" id="{{ service.id }}">{{service.title}}</h3>
                         <p style="width:100%;line-height: 2;">{{service.content}}</p>
                         <br>
                         <br>
