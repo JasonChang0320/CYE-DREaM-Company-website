@@ -59,17 +59,19 @@
     <div class="container">
         <h1 class="display-6 fw-bold mt-5">{{Service.title1}}</h1>
         <hr>
-        <br>
-        <br>
         {% for service in service_content %}
             <div class="column mt-lg-1">
                 <div class="row col-12 col-md-12 mt-1">
                     <div class="col-12 col-md-5 mt-1 p-3">
+                        <br>
+                        <br>
                         <img src="../static/assets/{{ service.pic_url }}" class="img-fluid" style="width:100%">
                     </div>
                     <div class="col-12 col-md-7 mt-4">
-                        <h3>{{service.title}}</h3>
-                        <p>{{service.content}}</p>
+                        <h3 style="width:100%;font-size:200%;">{{service.title}}</h3>
+                        <p style="width:100%;line-height: 2;">{{service.content}}</p>
+                        <br>
+                        <br>
                     </div>
                 </div>
             </div>

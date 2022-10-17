@@ -79,7 +79,7 @@
         <hr>
         <br>
         <br>
-        <table class="table">
+        <table class="table table-striped table-hover">
             <thead>
                 <tr>
                     <th class="col-1"></th>
@@ -90,16 +90,16 @@
             <tbody>
                 {% for experience in experience_content %}
                     <tr>
-                        <td colspan="2" class="text-center">{{experience.title}}</td>
-                        <td class="text-center">{{experience.content}}</td>
+                        <td colspan="2" class="text-center" style="line-height: 2;">{{experience.title}}</td>
+                        <td class="text-center" style="line-height: 2;">{{experience.content}}</td>
                     </tr>
                 {% endfor %}
-                <td rowspan="10" class="align-middle text-center">科技部</td>
+                <td rowspan="10" class="align-middle text-center" style="line-height: 2;">科技部</td>
                 {% for project in NSTC_project %}
                     <tr>
                         <!-- <td rowspan="3" class="align-middle text-center">科技部</td> -->
-                        <td class="text-center">{{project.project}}</td>
-                        <td class="text-center">{{project.content}}</td>
+                        <td class="text-center" style="line-height: 2;">{{project.project}}</td>
+                        <td class="text-center" style="line-height: 2;">{{project.content}}</td>
                     </tr>
                 {% endfor %}
             </tbody>

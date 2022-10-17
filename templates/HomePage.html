@@ -66,7 +66,7 @@
     </div> -->
 
     <!-- 幻燈片(carousel-caption) -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
@@ -96,7 +96,7 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
-    </div>
+    </div> -->
 
     <!-- 超連結(breadcrumb) -->
     <!-- <div class="path">
@@ -130,34 +130,34 @@
             <div class="col-12 col-md-12">
                 <br>
                 <br>
-                <h1>{{ Content.title }}</h1>
-                <p>{{Content.title_content}}
-                </p>
-
+                <h1 style="width:100%;font-size:200%;line-height: 2.5;font-weight: bold;">{{ Content.title }}</h1>
+                <p style="width:100%;font-size:100%;line-height: 2.5;">{{Content.title_content}}</p>
+                <br>
+                <br>
                 <div class="row">
                     <div class="col-12 col-md-4 text-center">
+                        <h4 style="width:100%;font-size:150%;font-weight: bold;">{{Content.sub_title1}}</h4>
                         <br>
                         <div class="item">
                             <img src="../static/assets/{{ Content.pic_url1 }}" class="img-fluid">
                         </div>
                         <br>
-                        <h4>{{Content.sub_title1}}</h4>
                     </div>
                     <div class="col-12 col-md-4 text-center">
+                        <h4 style="width:100%;font-size:150%;font-weight: bold;">{{Content.sub_title2}}</h4>
                         <br>
                         <div class="item">
                             <img src="../static/assets/{{ Content.pic_url2 }}" class="img-fluid">
                         </div>
                         <br>
-                        <h4>{{Content.sub_title2}}</h4>
                     </div>
                     <div class="col-12 col-md-4 text-center">
+                        <h4 style="width:100%;font-size:150%;font-weight: bold;">{{Content.sub_title3}}</h4>
                         <br>
                         <div class="item">
                             <img src="../static/assets/{{ Content.pic_url3 }}" class="img-fluid">
                         </div>
                         <br>
-                        <h4>{{Content.sub_title3}}</h4>
                     </div>
                     <!-- <div class="col-12 col-md-3">
                         <div class="item">
