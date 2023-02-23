@@ -11,3 +11,5 @@
 若有問題請E-mail：jason032089@gmail.com
 
 p.s.負責人已同意開放程式碼
+
+![image](https://github.com/JasonChang0320/CYE-DREaM-Company-website/blob/main/readme%20website%20image.png)
