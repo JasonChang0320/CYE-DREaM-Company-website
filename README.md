@@ -8,4 +8,6 @@
 
 **使用工具：** Django 設計後端架構，HTML, CSS, JS 設計前端介面，同時串接google map api顯示各區域地震危害度
 
-負責人已同意開放程式碼
+若有問題請E-mail：jason032089@gmail.com
+
+p.s.負責人已同意開放程式碼
